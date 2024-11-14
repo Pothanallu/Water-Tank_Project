@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <link rel="stylesheet" href="thankyou.css"> <!-- Link to CSS file if needed -->
+    <link href="https://fonts.googleapis.com/css2?family=Sofia:wght@400&display=swap" rel="stylesheet"> <!-- Sofia Font -->
+    <style>
+        /* Basic styling for thank you page */
+        body {
+            font-family: 'Sofia', cursive; /* Sofia font style */
+            background-image: url('thank.jpg'); /* Background image */
+            background-size: cover; /* Cover the entire background */
+            background-position: center; /* Center the background image */
+            color: rgb(12, 69, 145); /* Light text color */
+            text-align: center; /* Center text */
+            padding: 50px; /* Padding around the content */
+            overflow: hidden; /* Prevent scrolling */
+            position: relative; /* For positioning absolute children */
+            height: 100vh; /* Full viewport height */
+            display: flex; /* Flexbox for centering */
+            flex-direction: column; /* Column layout */
+            justify-content: center; /* Center vertically */
+            align-items: center; /* Center horizontally */
+        }
+
+        h1 {
+            color: #850404; /* Gold color for heading */
+            font-size: 3em; /* Adjusted font size */
+            margin: 0; /* Remove default margin */
+            z-index: 1; /* Stack on top */
+        }
+
+        p {
+            font-size: 1.5em; /* Slightly larger font for paragraph */
+            margin-top: 20px; /* Space above paragraph */
+            z-index: 1; /* Stack on top */
+        }
+
+        /* Link styling */
+        .back-link {
+            margin-top: 30px; /* Space above link */
+            font-size: 1.2em; /* Font size for link text */
+            color: rgb(1, 2, 1); /* Text color */
+            background-color: transparent; /* No background color */
+            text-decoration: underline; /* Underline for hyperlink effect */
+            cursor: pointer; /* Pointer cursor on hover */
+            z-index: 1; /* Stack on top */
+        }
+
+        /* Animation styles */
+        .paper {
+            position: absolute;
+            width: 100px; /* Width of paper */
+            height: 100px; /* Height of paper */
+            border: 1px solid #2a86dc; /* Light border for paper */
+            animation: blast 1s forwards; /* Animation */
+            opacity: 0.8; /* Slightly transparent */
+            pointer-events: none; /* Ignore pointer events */
+        }
+
+        @keyframes blast {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) rotate(720deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thank You for Your Order!</h1>
+    <p>Your order will be delivered within 24 hours.</p>
+    <a class="back-link" href="home.html">Back to Home</a>
+
+    <!-- Paper animation -->
+    <script>
+        // Create paper elements dynamically
+        const numPapers = 20; // Number of paper elements
+        const body = document.body;
+        const colors = ['#FF5733', '#33FF57', '#3357FF', '#FF33A8', '#FFD133']; // Array of colors
+
+        for (let i = 0; i < numPapers; i++) {
+            const paper = document.createElement('div');
+            paper.classList.add('paper');
+            // Randomize position, animation duration, and color
+            paper.style.left = Math.random() * 100 + 'vw'; // Random x position
+            paper.style.animationDuration = (Math.random() * 0.5 + 0.5) + 's'; // Random duration
+            paper.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; // Random color
+            body.appendChild(paper);
+
+            // Remove paper element after animation ends
+            paper.addEventListener('animationend', () => {
+                paper.remove();
+            });
+        }
+    </script>
+</body>
+</html>

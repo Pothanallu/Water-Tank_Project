@@ -1,0 +1,114 @@
+/* General Styles */
+body {
+    font-family: "Sofia", sans-serif;
+    background-image: url("index-object.png"); /* Background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    color: black; /* Change text color to black for better contrast */
+  }
+  
+  h1 {
+    color: #007bff; /* Water-themed blue */
+    font-size: 2rem; /* Adjust as necessary */
+    font-family: "Bagel Fat One", sans-serif; /* Apply the Bagel Fat One font */
+    text-align: center;
+    margin-bottom: 15px; /* Decreased margin */
+    font-weight: bold;
+  }
+  
+  /* Form Container */
+  .form-container {
+    background: none; /* No background for the container */
+    padding: 0; /* No padding */
+    border: none; /* No border */
+    width: 90%;
+    max-width: 500px; /* Increased max-width */
+    box-sizing: border-box;
+  }
+  
+  /* Form Group Styles */
+  .form-group {
+    display: flex; /* Use Flexbox for side-by-side layout */
+    justify-content: space-between; /* Space out label and input */
+    align-items: center; /* Center align items */
+    margin-top: 10px; /* Space between form groups */
+  }
+  
+  label {
+    font-weight: bold; /* Bold labels for better visibility */
+    color: black; /* Change label color to black */
+    width: 40%; /* Adjust width for labels */
+  }
+  
+  input[type="text"] {
+    width: 55%; /* Adjust width for inputs */
+    padding: 10px; /* Adjusted padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Optional: keep rounded corners */
+    background-color: transparent; /* Make background transparent */
+    color: black; /* Text color for inputs */
+    font-size: 0.9rem; /* Reduced font size */
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease; /* Transition for glow effect */
+  }
+  
+  input[type="text"]:focus {
+    outline: none; /* Remove default focus outline */
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Blue glow effect */
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px; /* Adjusted padding */
+    margin-top: 15px; /* Space above button */
+    background-color: #28a745; /* Green register button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem; /* Reduced font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease; /* Transition for glow effect */
+  }
+  
+  button:hover {
+    background-color: #218838;
+    box-shadow: 0 0 10px rgba(40, 167, 69, 0.7); /* Green glow effect on hover */
+  }
+  
+  button:active {
+    background-color: #1e7e34;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .form-container {
+      max-width: 85%; /* Adjusted for smaller screens */
+    }
+  
+    h1 {
+      font-size: 1.8rem; /* Further reduce on smaller screens */
+    }
+  
+    .form-group {
+      flex-direction: column; /* Stack label and input vertically on small screens */
+      align-items: flex-start; /* Align items to the start */
+    }
+  
+    label {
+      width: auto; /* Reset width for labels */
+    }
+  
+    input[type="text"] {
+      width: 100%; /* Full width for inputs */
+    }
+  
+    button {
+      font-size: 0.9rem;
+    }
+  }

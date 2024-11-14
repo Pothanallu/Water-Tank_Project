@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration</title>
+    <link rel="stylesheet" href="signupcss.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bagel+Fat+One&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Close Button Styles */
+      .close-btn {
+        background: none; /* No background */
+        border: none; /* No border */
+        font-size: 2rem; /* Size of the close icon */
+        color: black; /* Color of the close icon */
+        cursor: pointer; /* Pointer cursor on hover */
+        position: absolute; /* Positioning the button */
+        right: 10px; /* Slightly adjusted right positioning */
+        top: 10px; /* Adjusted top positioning to align with the title */
+        padding: 0; /* No padding */
+        width: auto; /* Width only for content */
+        height: auto; /* Height only for content */
+      }
+
+      /* Form Container Adjustments */
+      .form-container {
+        position: relative; /* Position relative for absolute positioning of close button */
+        width: 90%;
+        max-width: 500px; /* Container width */
+        margin: auto; /* Center the form */
+      }
+
+      h1 {
+        display: inline; /* Ensure the heading is inline with the button */
+      }
+
+      /* Ensure no hover effect on close button */
+      .close-btn:hover {
+        background: none; /* No hover background */
+        color: black; /* No color change on hover */
+      }
+    </style>
+  </head>
+  <body style="background-image: url('index-object.png')">
+    <form action="signup.php" method="post">
+      <div class="form-container">
+        <h1>User's Registration</h1>
+        <button class="close-btn" onclick="window.location.href='home.html'">
+          &times;
+        </button>
+        <!-- Close Button -->
+        <form>
+          <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+          <div class="form-group">
+            <label for="phoneno">Phone Number:</label>
+            <input type="text" id="phoneno" name="phoneno" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email" required />
+          </div>
+          <div class="form-group">
+            <label for="landmark">Landmark:</label>
+            <input type="text" id="landmark" name="mark" required />
+          </div>
+          <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required />
+          </div>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </form>
+  </body>
+</html>
